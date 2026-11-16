@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jpkim · 彼岸花</title>
+  <meta name="description" content="jpkim의 개인 웹사이트">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Shippori+Mincho:wght@400;500&display=swap">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- 꽃 한 송이를 한 번만 그리고, 모든 꽃이 재사용합니다 -->
+<svg class="defs" width="0" height="0" aria-hidden="true">
+  <defs>
+    <path id="petal" d="M0 0 C9 -5 22 -9 33 -5 C39 -3 41 2 37 4 C33 6 30 2 33 0 C24 -1 12 1 0 0Z" />
+    <g id="stamen">
+      <path d="M0 0 C2 -18 9 -36 20 -50" fill="none" stroke="currentColor" stroke-width=".9" stroke-linecap="round" />
+      <circle cx="20" cy="-50" r="1.5" />
+    </g>
+    <g id="bloom" fill="currentColor">
+      <use href="#stamen" transform="rotate(-22)" />
+      <use href="#stamen" transform="rotate(-4) scale(.92)" />
+      <use href="#stamen" transform="rotate(16)" />
+      <use href="#stamen" transform="rotate(38) scale(.86)" />
+      <use href="#stamen" transform="rotate(58) scale(.78)" />
+      <use href="#stamen" transform="scale(-1 1) rotate(-4) scale(.95)" />
+      <use href="#stamen" transform="scale(-1 1) rotate(16) scale(.9)" />
+      <use href="#stamen" transform="scale(-1 1) rotate(38)" />
+      <use href="#stamen" transform="scale(-1 1) rotate(58) scale(.8)" />
+      <use href="#petal" transform="rotate(-10)" />
+      <use href="#petal" transform="rotate(25) scale(.9)" />
+      <use href="#petal" transform="rotate(60)" />
+      <use href="#petal" transform="rotate(100) scale(.85)" />
+      <use href="#petal" transform="rotate(140)" />
+      <use href="#petal" transform="rotate(175) scale(.9)" />
+      <use href="#petal" transform="rotate(210)" />
+      <use href="#petal" transform="rotate(250) scale(.85)" />
+      <use href="#petal" transform="rotate(290)" />
+      <use href="#petal" transform="rotate(325) scale(.9)" />
+      <circle r="3.5" />
+    </g>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <a class="mark" href="#top">jpkim</a>
+  <nav class="controls">
+    <button class="again" type="button" data-i18n="again">다시 피우기</button>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" aria-pressed="true">KO</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- ───── 첫 화면: 달밤의 피안화 들판 ───── -->
+  <section class="hero" id="top">
+    <div class="moon" aria-hidden="true"></div>
+    <svg class="hills" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+      <path class="far" d="M0 120 L0 70 C150 40 260 55 380 45 C520 30 640 60 780 48 C900 38 1040 22 1200 50 L1200 120Z" />
+      <path class="near" d="M0 120 L0 92 C180 70 300 88 460 78 C620 66 760 90 940 80 C1060 72 1140 82 1200 78 L1200 120Z" />
+    </svg>
+    <div class="ground" aria-hidden="true"></div>
+
+    <!-- 꽃은 script.js가 채웁니다 -->
+    <div class="field" aria-hidden="true"></div>
+    <div class="spirits" aria-hidden="true"></div>
+
+    <figure class="verse">
+      <span class="kanji" lang="ja">彼岸花</span>
+      <blockquote>
+        <span data-i18n="hello">안녕하세요,</span><br>
+        <strong data-i18n="name">jpkim입니다.</strong><br>
+        <em data-i18n="tagline">천천히, 그러나 매해 다시 피어나듯 배우고 만듭니다.</em>
+      </blockquote>
+      <figcaption data-i18n="caption">higanbana · 저편 기슭의 꽃</figcaption>
+    </figure>
+
+    <a class="scroll-cue" href="#about">
+      <span data-i18n="cue">소개</span>
+      <i aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- ───── 소개 ───── -->
+  <section class="about" id="about">
+    <h2 class="section-title"><span data-i18n="aboutTitle">소개</span></h2>
+
+    <div class="about-body">
+      <p class="lead" data-i18n="aboutLead">꽃과 잎은 서로 만나지 못하지만, 가을이 오면 둘 다 돌아옵니다. 저도 그런 마음으로 꾸준히 무언가를 배우고 기록하고 있습니다.</p>
+      <p data-i18n="aboutP1">이곳은 제 작은 정원입니다. 깃허브를 처음 만들고, 마크다운을 연습하고, AI와 함께 웹페이지를 만들어 배포하기까지의 과정을 이 페이지에 담았습니다.</p>
+      <p data-i18n="aboutP2">아직은 씨앗 단계지만, 하나씩 피워 나가려 합니다. 들러 주셔서 고맙습니다.</p>
+
+      <h3 class="path-title" data-i18n="pathTitle">지나온 길</h3>
+      <ol class="path">
+        <li data-i18n="step1">깃허브 계정 만들기</li>
+        <li data-i18n="step2">마크다운 연습하기</li>
+        <li data-i18n="step3">클로드와 깃허브 연결하기</li>
+        <li data-i18n="step4">웹페이지 만들기</li>
+        <li data-i18n="step5">배포하기</li>
+      </ol>
+
+      <ul class="links">
+        <li><a href="https://github.com/jpkim-lang" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <span>© <span class="year"></span> jpkim</span>
+  <span data-i18n="credit">피안화 장면은 CodePen #cpc-css-random 작품을 참고했습니다.</span>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
